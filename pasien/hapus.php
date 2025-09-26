@@ -1,0 +1,16 @@
+<?php
+############ PROSES HAPUS DATA ###############
+
+#1.membuat koneksi
+include('../koneksi.php');
+
+#2. mengambil value ID hapus
+$id = $_GET['id'];
+
+#3. menjalankan query hapus
+$qry = mysqli_query($koneksi, "DELETE FROM pasien WHERE PasienKlinik_ID = '$id'");
+
+#4. mengalihkan halaman jika proses hapus selesai
+header("location:index.php");
+
+?>
